@@ -15,9 +15,7 @@ export const mutations = {
 export const actions = {
   loadList(context, searchTerm) {
     axios
-      .get(
-        `https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&s=${searchTerm}`
-      )
+      .get(`https://www.omdbapi.com/?apikey=894527ae&s=${searchTerm}`)
       .then((data) => {
         context.commit('SET_LIST', data.data.Search)
       })
@@ -25,9 +23,7 @@ export const actions = {
   },
   loadMovie(context, id) {
     axios
-      .get(
-        `https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&i=${id}`
-      )
+      .get(`https://www.omdbapi.com/?apikey=894527ae&i=${id}`)
       .then((data) => {
         context.commit('SET_MOVIE', data.data)
       })
