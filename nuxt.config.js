@@ -87,6 +87,11 @@ export default {
           urlPattern: 'https://www.omdbapi.com/*',
           method: 'GET',
           strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+        },
+        {
+          urlPattern: 'https://cdn.onlinewebfonts.com/*',
+          method: 'GET',
+          strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
         }
       ]
     },

@@ -1,6 +1,7 @@
 <template>
   <div>
     <nav class="nav">
+      <img src="https://cdn.onlinewebfonts.com/svg/img_129504.png" />
       <a href="/">HOME</a>
     </nav>
     <nuxt />
@@ -35,6 +36,9 @@ nav {
   align-items: center;
   height: 60px;
   background: tomato;
+  img {
+    max-width: 60px;
+  }
   a {
     font-weight: bold;
     font-family: Helvetica, sans-serif;
