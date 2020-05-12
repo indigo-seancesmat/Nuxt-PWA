@@ -78,17 +78,15 @@ export default {
   /*
    ** Handle external assets
    */
-  pwa: {
-    workbox: {
-      runtimeCaching: [
-        {
-          urlPattern: 'https://www.omdbapi.com/*',
-          handler: 'cacheFirst',
-          method: 'GET',
-          strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-        }
-      ]
-    }
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: 'https://www.omdbapi.com/*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      }
+    ]
   },
   /*
    ** Allow dev tools in production
