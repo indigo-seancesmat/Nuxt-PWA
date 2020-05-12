@@ -42,6 +42,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/onesignal',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],
@@ -66,6 +67,16 @@ export default {
     fallback: true
     // routes: [].concat(guides.map((guide) => `guides/${guide}`))
   },
+  // Options
+  oneSignal: {
+    init: {
+      appId: 'IndigoTestPWA',
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: false
+      }
+    }
+  },
   pwa: {
     /*
      ** Handle external assets
@@ -83,8 +94,8 @@ export default {
      ** Overwrite's generated manifest values
      */
     manifest: {
-      name: 'Test App',
-      short_name: 'Seans first PWA',
+      name: 'IndigoTestPWA',
+      short_name: 'TestPWA',
       lang: 'en',
       display: 'standalone'
     }

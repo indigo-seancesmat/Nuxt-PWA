@@ -32,6 +32,16 @@ export default {
   mounted() {
     // console.log(this.$route.params)
     this.$store.dispatch('loadMovie', this.$route.params.movie)
+
+    this.$OneSignal.push(() => {
+      this.$OneSignal.isPushNotificationsEnabled((isEnabled) => {
+        if (isEnabled) {
+          console.log('Push notifications are enabled!')
+        } else {
+          console.log('Push notifications are not enabled yet.')
+        }
+      })
+    })
   }
 }
 </script>
