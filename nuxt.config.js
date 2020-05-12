@@ -60,33 +60,34 @@ export default {
     extend(config, ctx) {}
   },
   /*
-   ** Overwrite's generated manifest values
-   */
-  manifest: {
-    name: 'Test App',
-    short_name: 'Seans first PWA',
-    lang: 'en',
-    display: 'standalone'
-  },
-  /*
    ** Generate dynamic routes
    */
   generate: {
     fallback: true
     // routes: [].concat(guides.map((guide) => `guides/${guide}`))
   },
-  /*
-   ** Handle external assets
-   */
-  workbox: {
-    runtimeCaching: [
-      {
-        urlPattern: 'https://www.omdbapi.com/*',
-        handler: 'cacheFirst',
-        method: 'GET',
-        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-      }
-    ]
+  pwa: {
+    /*
+     ** Handle external assets
+     */
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'https://www.omdbapi.com/*',
+          method: 'GET',
+          strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+        }
+      ]
+    },
+    /*
+     ** Overwrite's generated manifest values
+     */
+    manifest: {
+      name: 'Test App',
+      short_name: 'Seans first PWA',
+      lang: 'en',
+      display: 'standalone'
+    }
   },
   /*
    ** Allow dev tools in production
