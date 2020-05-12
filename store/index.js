@@ -16,7 +16,7 @@ export const actions = {
   loadList(context, searchTerm) {
     axios
       .get(
-        `http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&s=${searchTerm}`
+        `https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&s=${searchTerm}`
       )
       .then((data) => {
         context.commit('SET_LIST', data.data.Search)
@@ -25,7 +25,9 @@ export const actions = {
   },
   loadMovie(context, id) {
     axios
-      .get(`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&i=${id}`)
+      .get(
+        `https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&i=${id}`
+      )
       .then((data) => {
         context.commit('SET_MOVIE', data.data)
       })

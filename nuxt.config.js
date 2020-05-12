@@ -71,10 +71,10 @@ export default {
   /*
    ** Generate dynamic routes
    */
-  //   generate: {
-  //     fallback: true
-  //     routes: [].concat(guides.map((guide) => `guides/${guide}`))
-  //   },
+  generate: {
+    fallback: true
+    // routes: [].concat(guides.map((guide) => `guides/${guide}`))
+  },
   /*
    ** Handle external assets
    */
